@@ -1,0 +1,16 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>phone</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <button ion-button  block (click)="sendOTP()">Send OTP</button>
+  <ion-input type="text" placeholder="Enter OTP" [(ngModel)]="code"></ion-input>
+  <button ion-button block (click)="varify()" >varify</button>
+
+</ion-content>

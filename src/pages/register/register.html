@@ -1,0 +1,95 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Registration</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    
+
+        <form  [formGroup]="signUp" (submit)="signUpUser()">
+
+          <ion-item>
+          <ion-label floating>Name</ion-label>
+          <ion-input type="text" formControlName="name" 
+          [class.invalid]="!signUp.controls.name.valid && signUp.controls.name.valid.dirty"></ion-input>
+        </ion-item>
+        <ion-item class="error-message"
+        *ngIf="!signUp.controls.name.valid  && signUp.controls.name.dirty" no-lines>
+        <p>Please provide a name!</p>
+      </ion-item>
+      
+        <ion-item>
+          <ion-label floating>Lastname</ion-label>
+          <ion-input type="text" formControlName="lastname"
+          [class.invalid]="!signUp.controls.lastname.valid && signUp.controls.lastname.dirty"></ion-input>
+        </ion-item>
+        <ion-item class="error-message"
+        *ngIf="!signUp.controls.lastname.valid  && signUp.controls.lastname.dirty" no-lines>
+        <p>Please provide valid Surname!</p>
+      </ion-item>
+
+        <ion-item>
+            <ion-label floating>Address</ion-label>
+            <ion-input type="text" formControlName="address"></ion-input>
+          </ion-item>
+
+          <ion-item>
+              <ion-label floating>Number</ion-label>
+              <ion-input type="number" formControlName="number"
+              [class.invalid]="!signUp.controls.number.valid && signUp.controls.number.dirty"></ion-input>
+            </ion-item>
+            <ion-item class="error-message"
+        *ngIf="!signUp.controls.number.valid  && signUp.controls.number.dirty" no-lines>
+        <p>Please provide 10 digit Number!</p>
+      </ion-item>
+
+            <ion-item>
+                <ion-label floating>Email</ion-label>
+                <ion-input type="email" formControlName="email"
+                [class.invalid]="!signUp.controls.email && sign.controls.email.dirty"></ion-input>
+              </ion-item>
+              <ion-item class="error-message"
+        *ngIf="!signUp.controls.email.valid  && signUp.controls.email.dirty" no-lines>
+        <p>Please provide valid Email!</p>
+      </ion-item>
+
+              <ion-item>
+                <ion-label floating>Password</ion-label>
+                <ion-input type="password" formControlName="password"></ion-input>
+              </ion-item>
+              <!-- <h1>{{displayName}}</h1> -->
+            <ion-buttons padding>
+              <button ion-button color="secondary" [disabled]="!signUp.valid"type="submit" block small >with Email</button>
+
+              <!-- <div> -->
+                <button ion-button color="secondary"  block small
+              (click)="LoginWithGoogle()">
+            <ion-icon name="logo-googleplus"></ion-icon>
+          Login</button>
+        <!-- <div *ngIf="user.uid">  
+          You're already Logged in whit UID: {user.uid}
+        </div>
+        </div> -->
+
+
+              <button ion-button color="primary" type="submit" block small
+              (click)="signInWithFacebook()">with Facebook</button>
+
+
+              <button ion-button color="secondary" block small
+              (click)="Vrify()">with Contact
+
+              </button>
+             
+
+
+
+              <button ion-button color="primary" round full (click)="Login()">Login</button>
+            </ion-buttons>
+
+        </form>
+</ion-content>

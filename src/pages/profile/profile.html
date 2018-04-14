@@ -1,0 +1,67 @@
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-buttons start>
+      <button ion-button icon-only (click)="logOut()">
+          <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>User-Profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <ion-content padding color="">
+    
+       <ion-row>
+          <ion-col>
+             <ion-row>
+                <ion-col>
+                   Name
+                </ion-col>
+                <ion-col>
+                   {{name}}
+                </ion-col>
+             </ion-row>
+             <ion-row>
+                <ion-col>
+                   LastName
+                </ion-col>
+                <ion-col>
+                   {{lastname}}
+                </ion-col>
+             </ion-row>
+             <ion-row>
+                <ion-col>
+                   Address
+                </ion-col>
+                <ion-col>
+                   {{address}}
+                </ion-col>
+             </ion-row>
+             <ion-row>
+              <ion-col>
+                 Number
+              </ion-col>
+              <ion-col>
+                 {{number}}
+              </ion-col>
+           </ion-row>
+           <ion-row>
+           <ion-col>
+            Email
+         </ion-col>
+         <ion-col>
+            {{email}}
+         </ion-col>
+      </ion-row>
+          </ion-col>
+       </ion-row>
+    
+
+
+</ion-content>

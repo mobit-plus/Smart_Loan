@@ -1,0 +1,8 @@
+{
+  "name": "smart_loan",
+  "app_id": "53d53b8b",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
