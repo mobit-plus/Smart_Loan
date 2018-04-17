@@ -30,6 +30,8 @@
     "add": "^2.0.6",
     "angularfire2": "^5.0.0-rc.6",
     "cordova": "^8.0.0",
+    "cordova-android": "7.0.0",
+    "cordova-plugin-accountkit": "^1.4.0",
     "cordova-plugin-firebase": "^0.1.24",
     "cordova-plugin-googleplus": "^5.2.3",
     "firebase": "^4.12.1",
@@ -50,7 +52,16 @@
       "cordova-plugin-googleplus": {
         "REVERSED_CLIENT_ID": "com.googleusercontent.apps.8410864657-nacpjbgbs39jja6fs8vke5evhalnbjsr"
       },
-      "cordova-plugin-firebase": {}
-    }
+      "cordova-plugin-firebase": {},
+      "cordova-plugin-accountkit": {
+        "APP_ID": "1487046004739055",
+        "APP_NAME": "smart loan",
+        "CLIENT_TOKEN": "8f631f2431fe546545d195d5298085e1",
+        "API_VERSION": "v1.1"
+      }
+    },
+    "platforms": [
+      "android"
+    ]
   }
 }

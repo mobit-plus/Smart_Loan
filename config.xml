@@ -80,4 +80,11 @@
         <variable name="REVERSED_CLIENT_ID" value="com.googleusercontent.apps.8410864657-nacpjbgbs39jja6fs8vke5evhalnbjsr" />
     </plugin>
     <plugin name="cordova-plugin-firebase" spec="^0.1.24" />
+    <plugin name="cordova-plugin-accountkit" spec="^1.4.0">
+        <variable name="APP_ID" value="1487046004739055" />
+        <variable name="APP_NAME" value="smart loan" />
+        <variable name="CLIENT_TOKEN" value="8f631f2431fe546545d195d5298085e1" />
+        <variable name="API_VERSION" value="v1.1" />
+    </plugin>
+    <engine name="android" spec="~7.0.0" />
 </widget>

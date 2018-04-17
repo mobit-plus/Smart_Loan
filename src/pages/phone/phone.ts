@@ -15,26 +15,41 @@ export class PhonePage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  sendOTP() {
-    
-    (<any>window).FirebasePlugin.verifyPhoneNumber(9179074553, 60, (credential) => {
-      alert("SMS sent Successfully");
-      console.log(credential);
 
-      this.verificationId = credential.verificationId;
-    }, (error) => {
-      console.log(error);
+  LonginPhone() {
+    (<any>window).AccountKitPlugin.loginWithPhoneNumber({
+      useAccessToken: true,
+      defaultCountryCode: "IN",
+      facebookNotificationsEnabled: true,
+    },(data) => {
+      (<any>window).AccountKitPlugin.getAccount((info) => {
+        this.navCtrl.setRoot('ProfilePage');
+      });
+    },(error) => {
+      alert(error);
     })
   }
 
-  varify(){
-    let signCredential = firebase.auth.PhoneAuthProvider.credential(this.verificationId, this.code);
-    firebase.auth().signInWithCredential(signCredential)
-    .then((res) => {
-      console.log(res);
-    },(error) => {
-      console.log(error);
-    });
-  }
+  // sendOTP() {
+    
+  //   (<any>window).FirebasePlugin.verifyPhoneNumber(9179074553, 60, (credential) => {
+  //     alert("SMS sent Successfully");
+  //     console.log(credential);
+
+  //     this.verificationId = credential.verificationId;
+  //   }, (error) => {
+  //     console.log(error);
+  //   })
+  // }
+
+  // varify(){
+  //   let signCredential = firebase.auth.PhoneAuthProvider.credential(this.verificationId, this.code);
+  //   firebase.auth().signInWithCredential(signCredential)
+  //   .then((res) => {
+  //     console.log(res);
+  //   },(error) => {
+  //     console.log(error);
+  //   });
+  // }
 
 }
