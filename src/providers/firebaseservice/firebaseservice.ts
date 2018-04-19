@@ -21,10 +21,10 @@ export class FirebaseserviceProvider {
     });
   }
 
-  Signup(email, password,lastname,address, number,name){
+  Signup(email, password,name) {
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
     .then(newUser => {
-      this.afd.list('/Userdata').update(newUser.uid, {email:email,password:password,lastname:lastname,address:address,number:number,name:name});
+      this.afd.list('/Userdata').update(newUser.uid, {email:email,name:name});
     });
   }
 

@@ -14,7 +14,7 @@
 
           <ion-item>
           <ion-label floating>Name</ion-label>
-          <ion-input type="text" formControlName="name" 
+          <ion-input type="text" formControlName="name"
           [class.invalid]="!signUp.controls.name.valid && signUp.controls.name.valid.dirty"></ion-input>
         </ion-item>
         <ion-item class="error-message"
@@ -22,7 +22,7 @@
         <p>Please provide a name!</p>
       </ion-item>
       
-        <ion-item>
+        <!-- <ion-item>
           <ion-label floating>Lastname</ion-label>
           <ion-input type="text" formControlName="lastname"
           [class.invalid]="!signUp.controls.lastname.valid && signUp.controls.lastname.dirty"></ion-input>
@@ -30,14 +30,14 @@
         <ion-item class="error-message"
         *ngIf="!signUp.controls.lastname.valid  && signUp.controls.lastname.dirty" no-lines>
         <p>Please provide valid Surname!</p>
-      </ion-item>
+      </ion-item> -->
 
-        <ion-item>
+        <!-- <ion-item>
             <ion-label floating>Address</ion-label>
             <ion-input type="text" formControlName="address"></ion-input>
-          </ion-item>
+          </ion-item> -->
 
-          <ion-item>
+          <!-- <ion-item>
               <ion-label floating>Number</ion-label>
               <ion-input type="number" formControlName="number"
               [class.invalid]="!signUp.controls.number.valid && signUp.controls.number.dirty"></ion-input>
@@ -45,7 +45,7 @@
             <ion-item class="error-message"
         *ngIf="!signUp.controls.number.valid  && signUp.controls.number.dirty" no-lines>
         <p>Please provide 10 digit Number!</p>
-      </ion-item>
+      </ion-item> -->
 
             <ion-item>
                 <ion-label floating>Email</ion-label>
@@ -63,10 +63,10 @@
               </ion-item>
               <!-- <h1>{{displayName}}</h1> -->
             <ion-buttons padding>
-              <button ion-button color="secondary" [disabled]="!signUp.valid"type="submit" block small >with Email</button>
+              <button ion-button class="buttons" color="secondary" [disabled]="!signUp.valid"type="submit" block  > Email</button>
 
               <!-- <div> -->
-                <button ion-button color="secondary"  block small
+                <button ion-button class="buttons" color="secondary" type="submit" block 
               (click)="LoginWithGoogle()">
             <ion-icon name="logo-googleplus"></ion-icon>
           Login</button>
@@ -76,19 +76,19 @@
         </div> -->
 
 
-              <button ion-button color="primary" type="submit" block small
-              (click)="signInWithFacebook()">with Facebook</button>
+              <button ion-button color="primary" class="buttons" type="submit" block 
+              (click)="signInWithFacebook()"> Facebook</button>
 
 
-              <button ion-button color="secondary" block small
-              (click)="Vrify()">with Contact
+              <button ion-button color="secondary" class="buttons" block 
+              (click)="Vrify()"> Contact
 
               </button>
              
 
 
 
-              <button ion-button color="primary" round full (click)="Login()">Login</button>
+              <button ion-button color="primary"  block (click)="Login()">Login</button>
             </ion-buttons>
 
         </form>

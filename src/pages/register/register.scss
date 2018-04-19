@@ -1,8 +1,15 @@
 page-register {
-    .invalid { 
-        border-bottom: 1px solid #ff0000; 
+    .invalid {
+        border-bottom: 2px solid #ff0000; 
       }
     .error-message {
-        margin-top: -10px;
+        margin-top: -1px;
+        
+      }
+
+
+      .buttons {
+        //margin-top: 20px;
+        margin-bottom: 15px
       }
 }

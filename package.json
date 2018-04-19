@@ -30,7 +30,7 @@
     "add": "^2.0.6",
     "angularfire2": "^5.0.0-rc.6",
     "cordova": "^8.0.0",
-    "cordova-android": "7.0.0",
+    "cordova-android": "^7.0.0",
     "cordova-plugin-accountkit": "^1.4.0",
     "cordova-plugin-firebase": "^0.1.24",
     "cordova-plugin-googleplus": "^5.2.3",

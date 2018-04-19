@@ -16,6 +16,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { FIREBASE_CONFIG } from './firebase.credential';
 import { FirebaseserviceProvider } from '../providers/firebaseservice/firebaseservice';
+import * as firebase from 'firebase';
 
 @NgModule({
   declarations: [

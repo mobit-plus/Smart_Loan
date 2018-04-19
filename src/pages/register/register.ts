@@ -39,9 +39,9 @@ export class RegisterPage {
 
       this.signUp = formbuilder.group({
         name:['', Validators.compose([Validators.required, Validators.minLength(1)])],
-        lastname:['', Validators.compose([Validators.required, Validators.minLength(1)])],
-        address:['', Validators.compose([Validators.required, Validators.minLength(5)])],
-        number:['', Validators.compose([Validators.required, Validators.minLength(10)])],
+       // lastname:['', Validators.compose([Validators.required, Validators.minLength(1)])],
+       // address:['', Validators.compose([Validators.required, Validators.minLength(5)])],
+      //  number:['', Validators.compose([Validators.required, Validators.minLength(10)])],
         email:['', Validators.compose([Validators.required, EmailValidator.isValid])],
         password: ['', Validators.compose([Validators.required,Validators.minLength(7)])]
       });
@@ -62,13 +62,11 @@ export class RegisterPage {
       this.loading = this.loadingCtrl.create();
       this.loading.present();
 
-     let data = this.service.Signup(this.signUp.value.email,
-        this.signUp.value.password,
-        this.signUp.value.lastname, this.signUp.value.address,
-        this.signUp.value.number,this.signUp.value.name)
+    this.service.Signup(this.signUp.value.email,
+        this.signUp.value.password,this.signUp.value.name)
       .then(() => {
         this.loading.dismiss().then(() => {
-          this.navCtrl.push(ProfilePage,data);
+          
           this.navCtrl.setRoot('ProfilePage');
         });
       },(error) => {
@@ -95,41 +93,17 @@ export class RegisterPage {
       .signInWithPopup(new firebase.auth.FacebookAuthProvider())
       .then(res => {
         console.log(res);
-
-        // this.service.Signup(res.additionalUserInfo.profile.email,
-        //   res.additionalUserInfo.profile.password,res.additionalUserInfo.profile.last_name,
-        //   res.additionalUserInfo.profile.address,res.additionalUserInfo.profile.number,
-        //   res.additionalUserInfo.profile.first_name)
-        //   .then(() => {
-        //     this.loading.dismiss().then(() => {
-        //       this.navCtrl.setRoot('ProfilePage');
-        //     });
-        //   },(error) => {
-        //     this.loading.dismiss().then(() => {
-        //       let alert =  this.alertCtrl.create({
-        //         title: 'Error',
-        //         message: error.message,
-        //         buttons: [
-        //           {
-        //             text: 'OK',
-        //             role: 'Cancle'
-        //           }
-        //         ]
-        //       });
-        //       alert.present();
-        //     });
-        //   });
+        this.navCtrl.setRoot('ProfilePage');
       });
-     
   }
 
   Login() {
     this.navCtrl.push('LoginPage');
   }
 
-  Vrify(){
-    this.navCtrl.push('PhonePage');
-  }
+  // Vrify() {
+  //   this.navCtrl.push('PhonePage');
+  // }
 
   // LoginWithGoogle() {
   //   this.googlePlus.login({
